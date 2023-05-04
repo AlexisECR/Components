@@ -2,12 +2,9 @@ const templateFooter = document.createElement('template');
 templateFooter.innerHTML = `
     <style>
         .item-footer{
-            display: grid;
-            grid-area: footer;
-            background-color: white;
-            text-align: center;
-            padding: 1rem;
-            border-top: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
     

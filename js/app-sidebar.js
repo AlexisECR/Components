@@ -1,25 +1,27 @@
 const templateSideBar = document.createElement('template');
 templateSideBar.innerHTML = `
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        
         .item-aside{
             display: grid;
-            grid-area: aside;
-            background-color: rgba(39,54,62,255);
+            height: 100%;
+            max-height: 100vw;
         }
+                    
         .icon-bar {
-            width: 5rem;
-            height: 2.5rem;
             background-color: rgba(39,54,62,255);
         }
         
         .icon-bar a {
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 4rem;
             text-align: center;
-            padding: 10px;
             transition: all 0.3s ease;
             color: white;
-            font-size: 1rem;
+            font-size: 1.5rem;
         }
         
         .icon-bar a:hover {

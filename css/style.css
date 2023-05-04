@@ -8,7 +8,7 @@ html, body {
     font-family: Roboto, serif;
 }
 
-.item-root {
+/*.item-root{
     height: 100vh;
     display: grid;
     grid-template-columns: 5rem 1fr;
@@ -17,9 +17,9 @@ html, body {
     "aside header"
     "aside content"
     "aside footer";
-}
+}*/
 
-.item-header{
+/*.item-header{
     grid-area: header;
     background-color: rgba(0,150,136,255);
 }
@@ -32,7 +32,7 @@ html, body {
 .item-main{
     grid-area: content;
     background-color: rgba(228,228,228,255);
-}
+}*/
 
 /*
 .item-footer{
@@ -46,6 +46,7 @@ html, body {
 
 
 /*******************************************************************/
+/*
 .container {
     padding-left: 3px;
     display: inline-block;
@@ -70,7 +71,7 @@ html, body {
     transform: translate(0, -11px) rotate(45deg);
 }
 
-/*******************************************************************/
+!*******************************************************************!
 
 .icon-bar {
     width: 5rem;
@@ -93,4 +94,4 @@ html, body {
 
 .active {
     background-color: rgba(30,39,44,255);
-}
+}*/
