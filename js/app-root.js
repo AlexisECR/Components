@@ -9,12 +9,17 @@ templateRoot.innerHTML = `
         .item-root{
             height: 100vh;
             display: grid;
-            grid-template-columns: 4rem 1fr;
-            grid-template-rows: 5rem 86% 1fr;
+            grid-template-columns: 3rem 1fr;
+            grid-template-rows: 3rem 89% 1fr;
             grid-template-areas:
             "aside header"
             "aside content"
             "aside footer";
+        }
+        
+        button{
+            height: 20px;
+            width: 40px;
         }
         
          app-component-header {
@@ -50,11 +55,17 @@ templateRoot.innerHTML = `
 class ComponentRoot extends HTMLElement{
     constructor() {
         super();
-        this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(templateRoot.content.cloneNode(true));
+        const shadow = this.attachShadow({mode: 'open'});
+        shadow.appendChild(templateRoot.content.cloneNode(true));
+        console.log(shadow);
+    }
+
+    connectedCallback() {
+        this.shadowRoot.addEventListener('OpenMenu', (e) => {
+            this.shadowRoot.querySelector('.item-root').style.gridTemplateColumns = '15rem 1fr';
+            this.shadowRoot.querySelector('app-component-sidebar').querySelector('.icon-bar').style.display = 'flex';
+        });
     }
 }
 
-
-
-window.customElements.define("app-component-root", ComponentRoot);
+customElements.define("app-component-root", ComponentRoot);

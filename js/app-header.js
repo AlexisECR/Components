@@ -1,30 +1,34 @@
 const templateHeader = document.createElement('template');
 templateHeader.innerHTML = `
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
         .container-header{
-            height: ;
             display: flex;
+            justify-content: space-between;
+            padding: 0 25px 0 10px;
         }
-        .logo{
-            width: 4rem;
-            margin: 5px 0 0 5px;
-            height: 4rem;
-            justify-content: center;
-            align-items: center;
+        
+        .icon-menu i{
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+        }
+      
+        .icon-user i{
+            font-size: 2.3rem;
+            color: white;
+            cursor: pointer;
         }    
+        
     </style>
     
     <header class="item-header">
         <div class="container-header">
-            <div class="image-content">
-                <img class="logo" src="/images/browser-1.png" alt="">
+            <div class="icon-menu">
+                <i class="bi bi-list"></i>
             </div>
-            <div class="icon-title">
-                <span></span>
-            </div>
-            <div class="icon-sing-in">
-                <i class="fa-sharp fa-light fa-user"></i>
+            <div class="icon-user">
+               <i class="bi bi-person"></i>
             </div>
                 
         </div>
@@ -36,6 +40,16 @@ class ComponentHeader extends HTMLElement{
         super();
         this.attachShadow({mode: 'open'});
         this.shadowRoot.appendChild(templateHeader.content.cloneNode(true));
+    }
+    connectedCallback() {
+        this.shadowRoot.querySelector('.icon-menu').addEventListener('click', () => {
+            const messageEvent = new CustomEvent("OpenMenu", {
+                detail: {'grid-template-columns': '10rem 1fr'} ,
+                bubbles: true,
+                composed: true
+            });
+            this.dispatchEvent(messageEvent);
+        });
     }
 }
 

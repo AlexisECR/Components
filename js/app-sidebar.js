@@ -10,18 +10,23 @@ templateSideBar.innerHTML = `
         }
                     
         .icon-bar {
+            display: none;
+            flex-direction: column;
             background-color: rgba(39,54,62,255);
         }
         
         .icon-bar a {
             display: flex;
-            justify-content: center;
+            justify-content: start;
             align-items: center;
+            padding-left: 15px;
             height: 4rem;
-            text-align: center;
+            
+            text-decoration: none;
             transition: all 0.3s ease;
+            
+            font-size: 1.2rem;
             color: white;
-            font-size: 1.5rem;
         }
         
         .icon-bar a:hover {
@@ -35,11 +40,11 @@ templateSideBar.innerHTML = `
     
     <aside class="item-aside">
         <div class="icon-bar">
+            <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
             <a class="active" href="#"><i class="fa fa-home"></i></a>
             <a href="#"><i class="fa fa-search"></i></a>
             <a href="#"><i class="fa fa-envelope"></i></a>
             <a href="#"><i class="fa fa-globe"></i></a>
-            <a href="#"><i class="fa fa-trash"></i></a>
         </div>
     </aside>
 `;
